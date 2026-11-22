@@ -1,0 +1,42 @@
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.so
+
+# Environment variables / secrets
+.env
+.env.*
+!.env.example
+
+# User uploads and generated outputs (keep the folders, ignore contents)
+uploads/*
+outputs/*
+!uploads/.gitkeep
+!outputs/.gitkeep
+
+# Model weights (large files, GitHub rejects files over 100 MB)
+app/weights/*.pth
+app/weights/*.pt
+app/weights/*.ckpt
+app/weights/*.onnx
+!app/weights/README.md
+
+# Logs
+*.log
+
+# Testing / tooling caches
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
