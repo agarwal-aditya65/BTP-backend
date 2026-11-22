@@ -2,8 +2,8 @@ fastapi
 uvicorn[standard]
 python-multipart
 opencv-python-headless
-torch
-torchvision
+# torch
+# torchvision
 Pillow
 numpy
 aiofiles
