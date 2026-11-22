@@ -25,6 +25,12 @@ class EnhancerService:
     def load(self) -> None:
         for name, cfg in config.ENHANCERS.items():
             path = config.WEIGHTS_DIR / cfg["weights"]
+            # Handle both fog_enhancer.pth and foggy_enhancer.pth seamlessly
+            if not path.exists() and name == "fog":
+                alt_path = config.WEIGHTS_DIR / "foggy_enhancer.pth"
+                if alt_path.exists():
+                    path = alt_path
+
             gen = build_generator(cfg["norm"])
             self.weights_loaded[name] = False
 
